@@ -1,11 +1,8 @@
 FROM python as base
 
-RUN apt-get update && apt-get install -y \
-curl
+RUN apt-get update
 
-RUN curl -LOs https://archive.org/download/ia-pex/ia
-RUN chmod +x ia
-RUN mv ia usr/bin/
+RUN pip install internetarchive
 
 WORKDIR /downloads
 
